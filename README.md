@@ -1,8 +1,5 @@
 # RAPTOR: Rapid Adaptive Pre-trained Transformer for Optimized Reasoning
 
-![License](https://img.shields.io/github/license/shiwanshra1/RAPTOR-Rapid_Adaptive_Pre-trained_Transformer_for_Optimized_Reasoning)
-![Stars](https://img.shields.io/github/stars/shiwanshra1/RAPTOR-Rapid_Adaptive_Pre-trained_Transformer_for_Optimized_Reasoning)
-![Forks](https://img.shields.io/github/forks/shiwanshra1/RAPTOR-Rapid_Adaptive_Pre-trained_Transformer_for_Optimized_Reasoning)
 
 ## Overview
 RAPTOR (Rapid Adaptive Pre-trained Transformer for Optimized Reasoning) is a cutting-edge, transformer-based model designed for complex reasoning tasks. It leverages advanced deep learning techniques to achieve superior adaptability, efficiency, and inference speed. RAPTOR is optimized for various natural language processing (NLP) applications, including question-answering, logical reasoning, and structured inference.
