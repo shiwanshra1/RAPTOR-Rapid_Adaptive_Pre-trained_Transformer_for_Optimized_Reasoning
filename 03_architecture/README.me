@@ -2,35 +2,55 @@
 
 In this segment, we implement key components required for building a transformer-based Large Language Model (LLM). This model uses the GPT architecture and includes the following modules:
 
+1. **GPTDatasetV1**:  Here's the updated content for your README:
+
+---
+
+# LLM Architecture Overview
+
+This section details the key components required for building a transformer-based Large Language Model (LLM), using the GPT architecture.
+
+### Key Components:
+
 1. **GPTDatasetV1**:  
-   - This class prepares the data by tokenizing the input text and splitting it into chunks for training. It uses a sliding window to break the text into overlapping sequences of a fixed maximum length. Each sequence is paired with its corresponding target sequence, which is the same sequence shifted by one token to predict the next token.
+   - Prepares data by tokenizing input text and splitting it into chunks for training.
+   - Uses a sliding window to create overlapping sequences of a fixed maximum length.
+   - Each sequence is paired with its corresponding target sequence (shifted by one token).
 
 2. **MultiHeadAttention**:  
-   - This class defines the multi-head self-attention mechanism. The attention mechanism allows the model to focus on different parts of the input sequence while making predictions. The key components here include:
+   - Defines the multi-head self-attention mechanism.
+   - Focuses on different parts of the input sequence during prediction.
+   - Includes:
      - Query, Key, and Value projections (learnable linear transformations).
-     - Scaled dot-product attention, with a causal mask to prevent the model from seeing future tokens in the sequence.
-     - A final linear projection to combine the results from all attention heads.
+     - Scaled dot-product attention with a causal mask (prevents future tokens visibility).
+     - Final linear projection to combine results from all attention heads.
 
 3. **LayerNorm**:  
-   - This class implements Layer Normalization, which normalizes input across the feature dimension to improve training stability and convergence speed. It uses learnable parameters for scaling and shifting.
+   - Implements Layer Normalization to normalize input across the feature dimension.
+   - Improves training stability and convergence speed, using learnable parameters for scaling and shifting.
 
 4. **GELU**:  
-   - GELU (Gaussian Error Linear Unit) is an activation function that is commonly used in transformer models. It introduces non-linearity into the model to help learn complex patterns.
+   - A Gaussian Error Linear Unit (activation function) that introduces non-linearity.
+   - Commonly used in transformer models to help the network learn complex patterns.
 
 5. **FeedForward**:  
-   - This class defines a position-wise feed-forward network that consists of two linear layers, with a GELU activation in between. It helps process the output from the attention mechanism and adds non-linearity to the model.
+   - Defines a position-wise feed-forward network with two linear layers and a GELU activation in between.
+   - Processes the output from the attention mechanism and introduces non-linearity.
 
 6. **TransformerBlock**:  
-   - This class implements a single transformer block, which consists of:
-     - A multi-head self-attention layer followed by a residual connection (skip connection).
-     - A feed-forward network, also with a residual connection.
-     - Layer normalization applied before the attention and feed-forward layers.
+   - Implements a single transformer block consisting of:
+     - Multi-head self-attention with a residual connection.
+     - Feed-forward network with another residual connection.
+     - Layer normalization applied before attention and feed-forward layers.
 
-### Key Points:
+### Key Features:
 
-- The architecture is built upon the original transformer design, focusing on the decoder part, which is responsible for generating sequences of text.
-- The model leverages **multi-head attention** to learn dependencies across tokens in a sequence, while the **feed-forward network** further processes these learned dependencies.
-- **Residual connections** (shortcuts) are used after each attention and feed-forward block to help avoid vanishing gradients during training.
-- **Layer normalization** is applied at various stages to stabilize training.
+- The architecture is based on the original transformer design, focusing on the decoder part to generate text sequences.
+- **Multi-head attention** enables the model to learn dependencies across tokens.
+- **Feed-forward networks** help further process dependencies.
+- **Residual connections** prevent vanishing gradients during training.
+- **Layer normalization** stabilizes the training process.
 
-This architecture forms the backbone of our LLM. By stacking multiple `TransformerBlock`s, we can scale the model for larger tasks and datasets, enabling the LLM to generate contextually relevant text.
+By stacking multiple `TransformerBlock`s, the model scales to handle larger tasks and datasets, enabling it to generate contextually relevant text.
+
+
